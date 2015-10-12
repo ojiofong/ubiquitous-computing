@@ -67,8 +67,8 @@ public class SunshineSyncAdapter extends AbstractThreadedSyncAdapter {
      *
      *
      * */
-    private static String OPEN_WEATHER_API_KEY = "YOUR_API_KEY_HERE";
-   // private static String OPEN_WEATHER_API_KEY = "458eea64b54ca7734a29ee8239b56f49";
+    private static String OPEN_WEATHER_API_KEY = "458eea64b54ca7734a29ee8239b56f49";
+//    private static String OPEN_WEATHER_API_KEY = "YOUR_API_KEY_HERE";
 
 
     private static final String[] NOTIFY_WEATHER_PROJECTION = new String[] {
