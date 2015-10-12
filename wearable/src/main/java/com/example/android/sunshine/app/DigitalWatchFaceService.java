@@ -21,6 +21,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -88,18 +90,26 @@ public class DigitalWatchFaceService extends CanvasWatchFaceService {
             GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
         static final String COLON_STRING = ":";
 
-        /** Alpha value for drawing time when in mute mode. */
+        /**
+         * Alpha value for drawing time when in mute mode.
+         */
         static final int MUTE_ALPHA = 100;
 
-        /** Alpha value for drawing time when not in mute mode. */
+        /**
+         * Alpha value for drawing time when not in mute mode.
+         */
         static final int NORMAL_ALPHA = 255;
 
         static final int MSG_UPDATE_TIME = 0;
 
-        /** How often {@link #mUpdateTimeHandler} ticks in milliseconds. */
+        /**
+         * How often {@link #mUpdateTimeHandler} ticks in milliseconds.
+         */
         long mInteractiveUpdateRateMs = NORMAL_UPDATE_RATE_MS;
 
-        /** Handler to update the time periodically in interactive mode. */
+        /**
+         * Handler to update the time periodically in interactive mode.
+         */
         final Handler mUpdateTimeHandler = new Handler() {
             @Override
             public void handleMessage(Message message) {
@@ -151,6 +161,8 @@ public class DigitalWatchFaceService extends CanvasWatchFaceService {
         Paint mSecondPaint;
         Paint mAmPmPaint;
         Paint mColonPaint;
+        Paint mWeatherIconPaint;
+        Bitmap mWeatherIconBitmap;
         float mColonWidth;
         boolean mMute;
 
@@ -197,6 +209,10 @@ public class DigitalWatchFaceService extends CanvasWatchFaceService {
             mLineHeight = resources.getDimension(R.dimen.digital_line_height);
             mAmString = resources.getString(R.string.digital_am);
             mPmString = resources.getString(R.string.digital_pm);
+
+            mWeatherIconBitmap = BitmapFactory.decodeResource(resources, R.drawable.common_signin_btn_icon_focus_light);
+            mWeatherIconPaint = new Paint();
+
 
             mBackgroundPaint = new Paint();
             mBackgroundPaint.setColor(mInteractiveBackgroundColor);
@@ -494,8 +510,7 @@ public class DigitalWatchFaceService extends CanvasWatchFaceService {
                         mCalendar.get(Calendar.SECOND)), x, mYOffset, mSecondPaint);
             } else if (!is24Hour) {
                 x += mColonWidth;
-                canvas.drawText(getAmPmString(
-                        mCalendar.get(Calendar.AM_PM)), x, mYOffset, mAmPmPaint);
+                canvas.drawText(getAmPmString(mCalendar.get(Calendar.AM_PM)), x, mYOffset, mAmPmPaint);
             }
 
             // Only render the day of week and date if there is no peek card, so they do not bleed
@@ -509,6 +524,10 @@ public class DigitalWatchFaceService extends CanvasWatchFaceService {
                 canvas.drawText(
                         mDateFormat.format(mDate),
                         mXOffset, mYOffset + mLineHeight * 2, mDatePaint);
+
+                // Weather Image Icon
+                canvas.drawBitmap(mWeatherIconBitmap, mXOffset, mYOffset + mLineHeight * 3, mWeatherIconPaint);
+
             }
         }
 
