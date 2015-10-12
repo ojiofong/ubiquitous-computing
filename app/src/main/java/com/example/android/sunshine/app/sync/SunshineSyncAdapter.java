@@ -32,6 +32,7 @@ import android.util.Log;
 import com.bumptech.glide.Glide;
 import com.example.android.sunshine.app.MainActivity;
 import com.example.android.sunshine.app.R;
+import com.example.android.sunshine.app.UpdateWearableService;
 import com.example.android.sunshine.app.Utility;
 import com.example.android.sunshine.app.data.WeatherContract;
 import com.example.android.sunshine.app.muzei.WeatherMuzeiSource;
@@ -189,6 +190,9 @@ public class SunshineSyncAdapter extends AbstractThreadedSyncAdapter {
                 }
             }
         }
+
+        getContext().startService(new Intent(getContext(), UpdateWearableService.class));
+
         return;
     }
 
