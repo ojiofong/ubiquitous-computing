@@ -54,8 +54,7 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
      * Substitute you own project number here. This project number comes
      * from the Google Developers Console.
      */
-    //static final String PROJECT_NUMBER = "YOUR_PROJECT_NUMBER";
-    static final String PROJECT_NUMBER = "551965771235";
+    static final String PROJECT_NUMBER = "YOUR_PROJECT_NUMBER";
 
     private boolean mTwoPane;
     private String mLocation;
@@ -105,7 +104,6 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
         }
 
         SunshineSyncAdapter.initializeSyncAdapter(this);
-        SunshineSyncAdapter.syncImmediately(this);
 
         // If Google Play Services is not available, some features, such as GCM-powered weather
         // alerts, will not be available.
@@ -127,6 +125,8 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
             // Store regID as null
             storeRegistrationId(this, null);
         }
+
+        SunshineSyncAdapter.syncImmediately(this);
     }
 
     @Override

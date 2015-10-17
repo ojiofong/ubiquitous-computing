@@ -15,20 +15,28 @@
 <resources>
     <dimen name="digital_text_size">40dp</dimen>
     <dimen name="digital_text_size_round">45dp</dimen>
-    <dimen name="digital_date_text_size">20dp</dimen>
-    <dimen name="digital_am_pm_size">25dp</dimen>
-    <dimen name="digital_am_pm_size_round">30dp</dimen>
-    <dimen name="digital_x_offset">15dp</dimen>
-    <dimen name="digital_x_offset_round">25dp</dimen>
+    <dimen name="digital_x_offset">45dp</dimen>
+    <dimen name="digital_x_offset_round">50dp</dimen>
+
+    <dimen name="digital_x_offset_is24_adjustment_factor_round">5dp</dimen>
+    <dimen name="digital_x_offset_is24_adjustment_factor">15dp</dimen>
+
     <dimen name="digital_y_offset">80dp</dimen>
-    <dimen name="digital_line_height">25dp</dimen>
-    <dimen name="digital_config_color_picker_item_margin">32dp</dimen>
-    <dimen name="content_padding_start">12dp</dimen>
-    <dimen name="interactive_text_size">20dp</dimen>
-    <dimen name="interactive_text_size_round">25dp</dimen>
-    <dimen name="interactive_x_offset">15dp</dimen>
-    <dimen name="interactive_x_offset_round">25dp</dimen>
-    <dimen name="interactive_y_offset">72dp</dimen>
-    <dimen name="interactive_y_offset_round">84dp</dimen>
-    <dimen name="interactive_line_height">25dp</dimen>
+    <dimen name="digital_line_height">20dp</dimen>
+    <dimen name="digital_date_text_size">15dp</dimen>
+
+    <dimen name="digital_date_x_offset">35dp</dimen>
+    <dimen name="digital_date_x_offset_round">50dp</dimen>
+
+    <dimen name="digital_line_x_offset">75dp</dimen>
+    <dimen name="digital_line_x_offset_round">85dp</dimen>
+    <dimen name="digital_line_x_end_offset">40dp</dimen>
+
+    <dimen name="digital_image_x_offset">20dp</dimen>
+    <dimen name="digital_image_x_offset_round">35dp</dimen>
+
+    <dimen name="digital_temp_x_offset">45dp</dimen>
+    <dimen name="digital_temp_text_size">25dp</dimen>
+    <dimen name="digital_temp_image_adjustment_y_offset">10dp</dimen>
+
 </resources>
