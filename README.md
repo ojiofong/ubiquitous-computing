@@ -1,7 +1,9 @@
 Sunshine - Advanced Android Sample App
 ===================================
 
-Synchronizes weather information from OpenWeatherMap on Android Phones and Tablets. 
+Synchronizes weather information from OpenWeatherMap on Android Phones, Tablets and Watch face for Android Wear. 
+
+Project includes a wearable module used to build a watch face for Android Wear so users can access weather information at a glance.
 
 Pre-requisites
 --------------
